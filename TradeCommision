@@ -1,0 +1,57 @@
+import javax.print.attribute.SetOfIntegerSyntax;
+import java.util.Scanner;
+
+public class TradeCommissions {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String town = scanner.nextLine();
+        double seals = Double.parseDouble(scanner.nextLine());
+
+        double commissions = 0;
+
+        switch (town){
+            case "Sofia":
+                if (seals >=0 && seals <= 500){
+                    commissions = seals * 0.05;
+                } else if (seals > 500 && seals <= 1000) {
+                    commissions = seals * 0.07;
+                } else if (seals > 1000 && seals <= 10000) {
+                    commissions = seals * 0.08;
+                } else if (seals > 10000) {
+                    commissions = seals * 0.12;
+                }
+                System.out.printf("%.2f",commissions);
+                break;
+            case "Plovdiv":
+                if (seals >=0 && seals <= 500){
+                    commissions = seals * 0.055;
+                } else if (seals > 500 && seals <= 1000) {
+                    commissions = seals * 0.08;
+                } else if (seals > 1000 && seals <= 10000) {
+                    commissions = seals * 0.12;
+                } else if (seals > 10000) {
+                    commissions = seals * 0.145;
+                }
+                System.out.printf("%.2f",commissions);
+                break;
+            case "Varna":
+                if (seals >=0 && seals <= 500){
+                    commissions = seals * 0.045;
+                } else if (seals > 500 && seals <= 1000) {
+                    commissions = seals * 0.075;
+                } else if (seals > 1000 && seals <= 10000) {
+                    commissions = seals * 0.10;
+                } else if (seals > 10000) {
+                    commissions = seals * 0.13;
+                }
+                System.out.printf("%.2f",commissions);
+                break;
+            default:
+                System.out.println("error");
+                break;
+        }
+
+    }
+}
